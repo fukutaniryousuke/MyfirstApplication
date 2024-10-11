@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/sample")
 public class SampleControllerf {
 
+	//コメント確認用
 	@GetMapping("/test")
 	public String test(Model model) {
 		model.addAttribute("title", "Inquiry From");
