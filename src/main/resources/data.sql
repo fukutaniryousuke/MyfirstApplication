@@ -1,9 +1,6 @@
-CREATE TABLE inquiry
-(
-   id INT NOT NULL AUTO_INCREMENT,
-   name VARCHAR(100) NOT NULL,
-   email VARCHAR(100) NOT NULL,
-   contents VARCHAR(500) NOT NULL,
-   created DATETIME NOT NULL,
-   PRIMARY KEY(id)
-);
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('Ethan', 'sample@example.com', 'Hello', '2019-11-12 08:34:19');
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('Emma', 'sample2@example.com', 'GoodMorning', '2019-12-18 12:10:52');
+INSERT INTO inquiry(name, email, contents, created)
+VALUES('William', 'sample3@example.com', 'GoodEvening', '2019-12-18 15:10:52');
