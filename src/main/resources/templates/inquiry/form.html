@@ -16,7 +16,7 @@
 	<input id="email" name="email" type="text"><br>
 	<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 	<label for="contents">Detail　:</label>
-	<textarea name="contents" id="contents" rows="3" cols="40"></textarea><br>
+	<textarea name="contents" id="contents" rows="3" cols="40" th:field="contents"></textarea><br>
 	<div th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>
 	<input type="submit" value="Confirm">
 </form>
