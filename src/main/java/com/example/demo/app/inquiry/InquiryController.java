@@ -19,15 +19,22 @@ public class InquiryController {
 		return "inquiry/form";
 	}
 
+	@PostMapping("/form")
+	public String formGoBack(Model model) {
+		model.addAttribute("title", "Inquiry Form");
+
+		return "inquiry/form";
+	}
+
 	@PostMapping("/confirm")
-	public String confirm(@Validated InquiryForm inquiryForm,
-			BindingResult result,
+	public String confirm(@Validated InquiryForm inquiryForm, //←InquiryForm.javaで記載したvalidationが行われる
+			BindingResult result, //←バリデーション後の結果が返ってくる
 			Model model) {
-		if (result.hasErrors()) {
+		if (result.hasErrors()) { //errorがあるとtrueとなる
 			model.addAttribute("title", "Inquiry Form");
-			return "inquiry/form";
+			return "inquiry/form";//エラーがある場合
 		}
 		model.addAttribute("title", "Confirm Form");
-		return "inquiry/confirm";
+		return "inquiry/confirm";//エラーがない場合
 	}
 }
