@@ -18,7 +18,7 @@ public class InquiryController {
 	public String form(InquiryForm inquiryForm,
 			Model model,
 			@ModelAttribute("complete") String complete) {
-		model.addAttribute("inquiryForm", new InquiryForm());
+//		model.addAttribute("inquiryForm", new InquiryForm());
 		model.addAttribute("title", "Inquiry Form");
 
 		return "inquiry/form";
@@ -27,7 +27,7 @@ public class InquiryController {
 	@PostMapping("/form")
 	public String formGoBack(InquiryForm inquiryForm, 
 			Model model) {
-		model.addAttribute("inquiryForm", inquiryForm);
+//		model.addAttribute("inquiryForm", inquiryForm);
 		model.addAttribute("title", "Inquiry Form");
 
 		return "inquiry/form";
