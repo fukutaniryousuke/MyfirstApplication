@@ -24,7 +24,7 @@ public class InquiryDaoImpl implements InquiryDao {
 	}
 
 	@Override
-	public void insertinquiry(Inquiry inquiry) {
+	public void insertInquiry(Inquiry inquiry) {
 		jdbcTemplate.update("INSERT INTO inquiry(name, email, contents, created) VALUES(?, ?, ?, ?)",
 				inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getCreated());
 
@@ -41,6 +41,7 @@ public class InquiryDaoImpl implements InquiryDao {
 			inquiry.setName((String) result.get("name"));
 			inquiry.setEmail((String) result.get("email"));
 			inquiry.setContents((String) result.get("contents"));
+			//Timestamp型で送られてくる。toLocalDateTime()でLocalDateTime型に戻す
 			inquiry.setCreated(((Timestamp) result.get("created")).toLocalDateTime());
 			list.add(inquiry);
 		}

@@ -6,7 +6,7 @@ import com.example.demo.entiry.Inquiry;
 
 public interface InquiryDao {
 
-	void insertinquiry(Inquiry inquiry);
+	void insertInquiry(Inquiry inquiry);
 	
 	List<Inquiry> getAll();
 }
