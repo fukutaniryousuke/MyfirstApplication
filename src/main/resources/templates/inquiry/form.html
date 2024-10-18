@@ -1,25 +1,31 @@
-<!--This is the completed HTML file -->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
-	<title th:text="${title}">Insert title here</title>
+	<title th:text="${title}">Inquiry Form</title>
 </head>
 
 <body>
-	<h1 th:text="${title}">title</h1>
+	<h1 th:text="${title}">Inquiry Form</h1>
+	
 	<form method="post" action="#" th:action="@{/inquiry/confirm}" th:object="${inquiryForm}">
+		<!-- 名前入力欄 -->
 		<label for="name">Name:</label>
 		<input id="name" name="name" type="text" th:field="*{name}"><br>
 		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+		
+		<!-- メール入力欄 -->
 		<label for="email">Email:</label>
 		<input id="email" name="email" type="text" th:field="*{email}"><br>
 		<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+		
+		<!-- 内容入力欄 -->
 		<label for="contents">Detail:</label>
-		<textarea name="contents" id="contents" rows="3" cols="40" th:field="*{contents}"></textarea><br>
+		<textarea id="contents" name="contents" rows="3" cols="40" th:field="*{contents}"></textarea><br>
 		<div th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>
+		
+		<!-- 送信ボタン -->
 		<input type="submit" value="Confirm">
 	</form>
 </body>

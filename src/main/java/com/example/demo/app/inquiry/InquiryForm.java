@@ -1,19 +1,20 @@
 package com.example.demo.app.inquiry;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class InquiryForm {
 
-	@Size(min = 1, max = 20)
+	@NotBlank(message = "{name.notblank}")
+	@Size(min = 1, max = 20, message = "{name.size}")
 	private String name;
 
-	@NotNull
-	@Email
+	@NotBlank(message = "{email.notblank}")
+	@Email(message = "{email.invalid}")
 	private String email;
 
-	@NotNull
+	@NotBlank(message = "{contents.notblank}")
 	private String contents;
 
 	public InquiryForm() {
