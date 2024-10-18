@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 
 public class ServeyForm {
 
+	//int型は@Notblankと@Sizeが使用できない
 	@Min(value=0, message="{age.size}")
 	@Max(value=150, message="{age.size}")
 	private int age;
