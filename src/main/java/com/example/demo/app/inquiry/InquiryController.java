@@ -46,7 +46,7 @@ public class InquiryController {
 	}
 	
 	@PostMapping("/complete")
-	public String complete(@Validated InquiryForm inquiryform,
+	public String complete(@Validated InquiryForm inquiryform,//HTMLの書き換え防止策
 			BindingResult result,
 			Model model,
 			RedirectAttributes redirectAttributes) {
