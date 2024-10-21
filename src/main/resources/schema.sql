@@ -8,7 +8,7 @@ CREATE TABLE inquiry
    PRIMARY KEY(id)
 );
 
-CREATE TABLE survey
+CREATE TABLE servey
 (
 	id INT NOT NULL AUTO_INCREMENT,
 	age INT NOT NULL,

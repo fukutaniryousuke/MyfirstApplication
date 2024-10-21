@@ -10,10 +10,10 @@ import com.example.demo.entiry.Servey;
 
 @Service
 public class ServeyServiceImpl implements ServeyService {
-	
+
 	//Daoの初期化
 	private final ServeyDao dao;
-	
+
 	@Autowired
 	public ServeyServiceImpl(ServeyDao dao) {
 		this.dao = dao;
@@ -22,7 +22,6 @@ public class ServeyServiceImpl implements ServeyService {
 	@Override
 	public void save(Servey servey) {
 		dao.insertServey(servey);
-
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class ServeyDaoImpl implements ServeyDao {
 
 	@Override
 	public List<Servey> getAll() {
-		String sql = "SELECT id, age, satisfaction, comment, created";
+		String sql = "SELECT id, age, satisfaction, comment, created FROM servey";
 		List<Map<String, Object>> resultList = jdbcTemplate.queryForList(sql);
 		List<Servey> list = new ArrayList<Servey>();
 		for (Map<String, Object> result : resultList) {
@@ -40,7 +40,7 @@ public class ServeyDaoImpl implements ServeyDao {
 			servey.setAge((int) result.get("age"));
 			servey.setSatisfaction((int) result.get("satisfaction"));
 			servey.setComment((String) result.get("comment"));
-			servey.setCreated(((Timestamp) result.get("creaated")).toLocalDateTime());
+			servey.setCreated(((Timestamp) result.get("created")).toLocalDateTime());
 			list.add(servey);
 		}
 		return list;
