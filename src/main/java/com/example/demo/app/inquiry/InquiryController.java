@@ -35,7 +35,7 @@ public class InquiryController {
 		model.addAttribute("inquiryList", list);
 		model.addAttribute("title", "Inquiry Index");
 		
-		return "inquiry/index";
+		return "inquiry/index-boot";
 	}
 
 	@GetMapping("/form")
@@ -45,7 +45,7 @@ public class InquiryController {
 		//		model.addAttribute("inquiryForm", new InquiryForm());
 		model.addAttribute("title", "Inquiry Form");
 
-		return "inquiry/form";
+		return "inquiry/form-boot";
 	}
 
 	@PostMapping("/form")
@@ -54,7 +54,7 @@ public class InquiryController {
 		//		model.addAttribute("inquiryForm", inquiryForm);
 		model.addAttribute("title", "Inquiry Form");
 
-		return "inquiry/form";
+		return "inquiry/form-boot";
 	}
 
 	@PostMapping("/confirm")
@@ -63,10 +63,10 @@ public class InquiryController {
 			Model model) {
 		if (result.hasErrors()) { //errorがあるとtrueとなる
 			model.addAttribute("title", "Inquiry Form");
-			return "inquiry/form";//エラーがある場合
+			return "inquiry/form-boot";//エラーがある場合
 		}
 		model.addAttribute("title", "Confirm Form");
-		return "inquiry/confirm";//エラーがない場合
+		return "inquiry/confirm-boot";//エラーがない場合
 	}
 
 	@PostMapping("/complete")
@@ -76,7 +76,7 @@ public class InquiryController {
 			RedirectAttributes redirectAttributes) {
 		if (result.hasErrors()) { //errorがあるとtrueとなる
 			model.addAttribute("title", "Inquiry Form");
-			return "inquiry/form";//エラーがある場合
+			return "inquiry/form-boot";//エラーがある場合
 		}
 		Inquiry inquiry = new Inquiry();
 		inquiry.setName(inquiryform.getName());
